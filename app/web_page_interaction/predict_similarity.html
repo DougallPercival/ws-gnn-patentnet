@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>similarity patent id</title>
+
+        <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+        div {text-align: center;}
+
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+          text-align: left;
+        }
+
+        caption {
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 160%;
+            padding: 5px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        th, td {
+          padding: 15px;
+          color : black;
+        }
+
+        table {
+          table-layout: auto
+          border-spacing: 5px;
+          text-align: left;
+        }
+        * {
+          box-sizing: border-box;
+        }
+
+        #grad1 {
+          height: 200px;
+          background-color: black; /* For browsers that do not support gradients */
+          background-image: linear-gradient(to right, cyan, white); /* Standard syntax (must be last) */
+        }
+
+        #t01 tr:nth-child(even) {
+          background-color: #eee;
+        }
+        #t01 tr:nth-child(odd) {
+          background-color: #fff;
+        }
+        #t01 th {
+          color: white;
+          background-color: black;
+        }
+        .myDiv {
+                border: 5px outset blue;
+                background-color: white;
+                text-align: center;
+                position: absolute;
+
+         }
+
+
+        </style>
+    </head>
+
+  <body>
+    <body id=grad1>
+    <h1> Welcome to patent search </h1>
+    <p> This is a website to find similar patent </p>
+
+    <form action = "/main_page" method = "POST" enctype = "multipart/form-data">
+
+        <label for="patent_id"> patent ID:</label>
+        <input type = "text" name = "patent_id" />
+        <label for="patent_year_min"> patent year min:</label>
+        <input type = "text" name = "year_begin" />
+        <label for="patent_year_max"> patent year max:</label>
+        <input type = "text" name = "year_end" />
+        <label for="weight_node"> weight for citation:</label>
+        <input type = "text" name = "weight_node" />
+        <label for="weight_tfidf"> weight for text:</label>
+        <input type = "text" name = "weight_tfidf" />
+        <input type = "submit"/>
+    </form>
+    </br>
+
+
+
+    <div class="myDiv" style="width:800px; margin:0 auto;" align="center">
+     {{ tables[0]|safe }}
+    </div>
+
+
+  </body>
+</html>
